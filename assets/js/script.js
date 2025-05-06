@@ -1,35 +1,13 @@
-// Fungsi untuk scroll halus ke bagian tertentu
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+// scripts.js
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+        card.addEventListener('mouseover', function() {
+            card.style.transform = 'scale(1.05)';
+            card.style.transition = 'transform 0.3s';
         });
-    });
-});
-
-// Menambahkan efek pada elemen proyek ketika di-scroll
-window.addEventListener('scroll', function() {
-    const projects = document.querySelectorAll('.project');
-    
-    projects.forEach(project => {
-        const projectPosition = project.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight;
-
-        // Jika proyek muncul di layar, beri efek fade-in
-        if (projectPosition < screenPosition) {
-            project.classList.add('fade-in');
-        } else {
-            project.classList.remove('fade-in');
-        }
-    });
-});
-
-// Menambahkan efek klik pada tombol
-const buttons = document.querySelectorAll('button');
-buttons.forEach(button => {
-    button.addEventListener('click', function() {
-        alert("Tombol diklik!");
+        card.addEventListener('mouseout', function() {
+            card.style.transform = 'scale(1)';
+        });
     });
 });
