@@ -1,3 +1,33 @@
+/* Efek scroll halus untuk seluruh halaman */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Efek fade-in */
+.project {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.project.fade-in {
+    opacity: 1;
+}
+
+/* Style untuk tombol */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
